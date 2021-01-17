@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav id="navbar">
+        <header>It's Just JavaScript</header>
+        <ul>
+            <li><a class="nav-link" href="#Introduction">Introduction</a></li>   
+            <li><a class="nav-link" href="#Pre-Requisites">Pre-Requisites</a></li>
+            <li><a class="nav-link" href="#JavaScript_vs_Java">JavaScript vs Java</a></li>
+            <li><a class="nav-link" href="#Variables">Variables</a></li>
+            <li><a class="nav-link" href="#Variable_Scope">Variable Scope</a></li>
+            <li><a class="nav-link" href="#Global_Variables">Global Variables</a></li>
+            <li><a class="nav-link" href="#Values">Values</a></li>
+            <li><a class="nav-link" href="#Equality_of_Values">Equality of Values</a></li>
+        </ul>
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="Introduction">
+            <header>Introduction</header>
+            <p>JavaScript is a small, lightweight, cross-platform, object-oriented scripting language. JavaScript can be connected to the objects of its environment to provide programmatic control over them. JavaScript contains a standard library of objects, such as Array, Date, and Math, and a core set of language elements such as operators, control structures, and statements. Core JavaScript can be extended for a variety of purposes by supplementing it with additional objects.</p>
+            <ul>
+                <li>Client-side JavaScript extends the core language by supplying objects to control a browser and its Document Object Model (DOM).</li>
+                <li>Client-side extensions allow an application to place elements on an HTML form and respond to user events such as mouse clicks, form input, and page navigation.</li>
+                <li>Server-side JavaScript extends the core language by supplying objects relevant to running JavaScript on a server.</li>
+                <li>Server-side extensions allow an application to communicate with a database, provide continuity of information from one invocation to another of the application, or perform file manipulations on a server.</li>
+            </ul>
+        </section>
+        <section class="main-section" id="Pre-Requisites">
+            <header>Pre-Requisites</header>
+            <p>The following guide assumes you have the following basic background:</p>
+            <ul>
+                <li>A general understanding of the Internet and the World Wide Web.</li>
+                <li>Good working knowledge of HTML.</li>
+                <li>Some programming experience.</li>
+            </ul>
+            <p>If you are new to programming and are interested in learning, try the course for beginner front-end developers <a href="https://developer.mozilla.org/docs/Learn/Front-end_web_developer">here</a>.</p>
+        </section>
+        <section class="main-section" id="JavaScript_vs_Java">
+            <header>JavaScript vs Java</header>
+            <p>JavaScript and Java are similar in some ways but fundamentally different in many others. Javascript was originally named LiveScript.  The JavaScript language resembles Java, but does not have Java's static typing or strong type checking. JavaScript follows most of the Java expression syntax, naming conventions and basic control-flow constructs which was the reason why it was renamed from LiveScript to JavaScript.</p>
+            
+            <p>It is not necessary syntactically to use a semicolon at the end of a code line.</p>
+        
+            <p>Java is a compile-time system of classes built by declarations.  JavaScript supports a runtime system based on a small number of data types representing numeric, Boolean, and string values. JavaScript has a prototype-based object model instead of the more common class-based object model. The prototype-based model provides dynamic inheritance. This allows for variations of what is inherited for individual objects. JavaScript also supports functions without any special declarative requirements. Functions can be properties of objects, executing as loosely typed methods.</p>
+        
+            <p>JavaScript is a "free-form" language compared to Java. You do not have to declare all variables, classes, and methods. You do not have to be concerned with whether methods are public, private, or protected, and you do not have to implement interfaces. Variables, parameters, and function return types are not explicitly typed.</p>
+        </section>
+        <section class="main-section" id="Variables">
+            <header>Variables</header>
+            <p>Variables are the link in code to values. </p>
+            <p>Variables must start with a letter, underscore (_), or dollar sign ($); subsequent characters can also be digits (0-9). Because JavaScript is case sensitive, letters include the characters "A" through "Z" (uppercase) and the characters "a" through "z" (lowercase).</p>
+            <p>There are four ways in which you can declare a variable.</p>
+            <p>With the keyword var.  It should be noted this way should no longer e utilized.</p>
+            <code>var x = 25</code>
+            <p>With the keyword let. </p>
+            <code>let x = 'smoke'</code>
+            <p>With the keyword const.  This decalaration is meant to prevent changes to the variable. </p>
+            <code>const PI = 3.14</code>
+            <p>Or globally.  More on this in a bit.</p>
+            <code>x = 29</code>
+        </section>
+        <section class="main-section" id="Variable_Scope">
+            <header>Variable Scope</header>
+            <p>When you declare a variable outside of any function, it is called a global variable, because it is available to any other code in the current document. When you declare a variable within a function, it is called a local variable, because it is available only within that function.</p>
+            <p>Prior to ECMAScript 2015 JavaScript had no concept of block statement scope. A variable declared within a block is local to the function (or global scope) that the block resides within. </p>
+            <p>The following code will log 15, because the scope of x is the function (or global context) within which x is declared, not the block, which in this case is an if statement.</p>
+            <code>if (true) { var x = 15; } console.log(x); // 15</code>
+            <p>This behavior changes with the introduction of the ECMScript let keywork.</p>
+            <code>if (true) { let y = 15; } console.log(y); // ReferenceError: y is not
+            defined</code>
+        </section>
+        <section class="main-section" id="Global_Variables">
+            <header>Global Variables</header>
+            <p>Global variables are properties of the global object. In web pages the global object is the window, so you can set and access global variables using the window.variable syntax.</p>
+            <code>window.variable</code>
+        
+            <p>You can access global variables declared in one window or frame from another window or frame by specifying the window or frame name. For example, if a variable called username is declared in a document, you can refer to this variable from an iframe as parent.username.<p/>
+            <code>parent.username</code>
+        </section>
+        <section class="main-section" id="Values">
+            <header>Values</header>
+            <p>You cannot explain variables without then addressing what they link to; values.  There are two types of values:</p>
+            <p><strong>Primitive Values</strong></p>
+            <p>Primitive values are <strong>immutable</strong>.  This means these cannot be changed.</p>
+            <ul>
+                <li>Undefined (undefined): used for unintentionally missing values.</li>
+                <li>Null (null): used for intentionally missing values.</li>
+                <li>Booleans (true and false): used for logical operations.</li>
+                <li>Numbers (-100, 3.14, and others): used for math calculations.</li>
+                <li>Strings ("hello", "abracadabra"): used for text.</li>
+                <li>Symbols (uncommon): used to hide implementation details.</li>
+                <li>BigInts (new): used for math on big numbers.</li>
+            </ul>
+            <p><strong>Objects and Functions</strong><p>
+            <p>Objects and functions are changeable or mutable. </p>
+            <ul>
+                <li>Objects ({}): used to group related data and code.</li>
+                <li>Functions (x => x * 2): used to refer to code.</li>
+            </ul>
+            
+            <p>Everything else in javaScript is nothing more than an object</p>
+        </section>
+            <section class="main-section" id="Equality_of_Values">
+            <header>Equality of Values</header>
+            <p>All values are considered "truthy" except the following exceptions:
+            <ul>
+                <li>null</li>
+                <li>undefined</li>
+                <li>NaN</li>
+                <li>empty string ("")</li>
+                <li>0</li>
+                <li>false</li>
+            </ul>
+            <p>What this means is you can easily use a value instead of evaluating the value.</p>
+                <code> let value = 'some text'
+                if (value) {
+                
+                }</code>
+            
+            <p><strong>Types of equality</strong></p>
+            <ul>
+                <li><strong>Strict Equality:</strong> <code>a === b</code> (triple equals).</li>
+                <li><strong>Loose Equality:</strong> <code>a == b</code> (double equals).</li>
+                <li><strong>Same Value Equality:</strong> <code>Object.is(a, b)</code> (are <i>a</i> and <i>b</i> the same value).</li>
+            </ul>
+        </section>
+    </main>
+    <footer>&copy; <span id="year"></span>&nbsp;by Daniel Greener-Vigil</footer>
+    <script>
+        document.getElementById("year").innerHTML = new Date().getFullYear()
+    </script>
+</body>
+</html>
